@@ -22,13 +22,14 @@ return (
     
     <div className="App">
       <header className="App-header">
-      
         <h1>
          Rate the Quote!
         </h1>
+      </header>
+      <div className="Quote">
         <div>{affirmation.quoteText}</div>
         <div>{affirmation.quoteAuthor}</div>
-      </header>
+        </div>
     </div>
   );
 }
