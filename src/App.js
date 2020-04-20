@@ -1,23 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+
 import './App.css';
+// import {usefetchAff} from './fetchComponent';
 
 function App() {
-  return (
+
+  // usefetchAff(Url)
+  const Url = `https://quote-garden.herokuapp.com/api/v2/quotes/random`
+  const [affirmation, setAff] = useState([])
+  
+  useEffect(()=> {
+      fetch(Url)
+         .then(response => response.json())
+         .then( data => setAff(data.quote))
+},[Url])
+
+
+console.log(affirmation.quoteText)
+
+return (
+    
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      
+        <h1>
+         Rate the Quote!
+        </h1>
+        <div>{affirmation.quoteText}</div>
+        <div>{affirmation.quoteAuthor}</div>
       </header>
     </div>
   );
