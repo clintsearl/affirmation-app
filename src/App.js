@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 import './App.css';
-// import {usefetchAff} from './fetchComponent';
+import {usefetchAff} from './fetchComponent';
 
 function App() {
 
-  // usefetchAff(Url)
+  usefetchAff(Url)
+  
   const Url = `https://quote-garden.herokuapp.com/api/v2/quotes/random`
   const [affirmation, setAff] = useState([])
   
@@ -16,7 +17,6 @@ function App() {
 },[Url])
 
 
-console.log(affirmation.quoteText)
 
 return (
     
