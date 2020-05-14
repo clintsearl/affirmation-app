@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-
+import Contact from './form'
 import './App.css';
-import {usefetchAff} from './fetchComponent';
+// import {usefetchAff} from './fetchComponent';
 
 function App() {
 
-  usefetchAff(Url)
+  // usefetchAff(Url)
   
-  const Url = `https://quote-garden.herokuapp.com/api/v2/quotes/random`
+   const Url = `https://quote-garden.herokuapp.com/api/v2/quotes/random`
+  // const Url = "https://quotes.rest/quote/random?language=en&limit=1"
   const [affirmation, setAff] = useState([])
   
   useEffect(()=> {
@@ -17,7 +18,7 @@ function App() {
 },[Url])
 
 
-
+console.log()
 return (
     
     <div className="App">
@@ -29,6 +30,7 @@ return (
       <div className="Quote">
         <div>{affirmation.quoteText}</div>
         <div>{affirmation.quoteAuthor}</div>
+        <Contact/>
         </div>
     </div>
   );
